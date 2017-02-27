@@ -1,0 +1,25 @@
+Chapter 5th: Functions
+
+5.10: Solved example - A player rolls two dice. Each die has six faces.  These faces contain 1, 2, 3, 4, 5 and 6
+spots. After the dice have come to rest, the sum of the spots on the two upward faces is calculated.
+If the sum is 7 or 11 on the first throw, the players wins. If the sum is 2, 3 or 12 on the first throw 
+(called "craps"), the playe loses(i.e the "house" wins). If the sum is 4,5,6,8,9 or 10 on the first throw, then
+that sum becomes the player's "point". To win, you must continue rolling the dice until you "make your point."
+The player loses by rolling a 7 before making the point.
+
+5.12 Scope Rules: solved example for scope rules.
+
+5.13: Recursion - Implemented menu driven program for recursion. Covered topics are Factorial, Fibonnacci series, GCD using recursion.
+                   TODO: Tower of honoi using recusion
+       
+From exercises:
+
+5.9: Garage - A parking garage charges a $2.00 minimum fee to park for up to three hours. The garage charges an additional $0.05 per hour for each
+hour or part thereof in excess of three hours. The maximum charge for any given 24 hours period is $10.00. Assume that no car pars for longer than
+24 hours at a time. Write a program that will calculate and print parking charges for each of 3 customers. your program should print the results 
+in a neat tabular format, and should calculate and print the total of yesterday's receipts.
+
+5.25: An integer number is said to be a perfect number, if its factor, including 1 (but not the number itself). Sum to the number. 
+example : 6 is perfect number because 6: 1 + 2 + 3 = 6.
+
+TODO from 5th chapter: 5.28, 5.29
