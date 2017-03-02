@@ -10,7 +10,8 @@ The player loses by rolling a 7 before making the point.
 5.12 Scope Rules: solved example for scope rules.
 
 5.13: Recursion - Implemented menu driven program for recursion. Covered topics are Factorial, Fibonnacci series, GCD using recursion.
-                   TODO: Tower of honoi using recusion
+TODO: Tower of honoi using recusion
+
        
 From exercises:
 
@@ -19,7 +20,16 @@ hour or part thereof in excess of three hours. The maximum charge for any given 
 24 hours at a time. Write a program that will calculate and print parking charges for each of 3 customers. your program should print the results 
 in a neat tabular format, and should calculate and print the total of yesterday's receipts.
 
-5.25: An integer number is said to be a perfect number, if its factor, including 1 (but not the number itself). Sum to the number. 
+5.26: An integer number is said to be a perfect number, if its factor, including 1 (but not the number itself). Sum to the number. 
 example : 6 is perfect number because 6: 1 + 2 + 3 = 6.
 
 TODO from 5th chapter: 5.28, 5.29
+
+Chapter 6th: Arrays
+
+6.6: Bubble Sort: Regular way and Optimized way.
+
+TODO: Lineanr search, Binary search problem, Mean mode madian problem from solved examples.
+
+
+TODO List should be complete by end of this week
