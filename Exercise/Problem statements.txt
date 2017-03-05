@@ -23,7 +23,12 @@ in a neat tabular format, and should calculate and print the total of yesterday'
 5.26: An integer number is said to be a perfect number, if its factor, including 1 (but not the number itself). Sum to the number. 
 example : 6 is perfect number because 6: 1 + 2 + 3 = 6.
 
-TODO from 5th chapter: 5.28, 5.29
+5.28: Write a program to that takes an integer value and print the numberwith its digits reversed. For example, input: 1234 output:4321
+
+5.29: Computer are playing an increasing role in education. Write a program that will help in elementary school student learn multiplication question
+and answer. Use rand to produce two positive one digit integers. It should the type a question such as "How much is 6 times 7? \nanswer is: 42"
+BUG: FIX IT.
+
 
 Chapter 6th: Arrays
 
