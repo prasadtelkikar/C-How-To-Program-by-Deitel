@@ -34,7 +34,38 @@ Chapter 6th: Arrays
 
 6.6: Bubble Sort: Regular way and Optimized way.
 
-TODO: Lineanr search, Binary search problem, Mean mode madian problem from solved examples.
+TODO:
+Solved examples:
+    6.11: Example to implement static variable initialization
+    6.13: Array as a argument to the function
+    6.16: Survey data analysis. Mean, mode and median.
+    6.18: Linear search of an array
+    6.19: Binary search. Display same output as given in the book.
+    6.22: Example of Double scripted array.
 
-
-TODO List should be complete by end of this week
+From Exercise:
+    6.10: Use 1D array to solve the following problem. A company pays its sales people on a commision basis. The sales people receive $200 per week
+          plus 9% of their gross sales for that week. For example, a salesperson who grosses $3000 in sales in a week receives $200 plus 9% of $3000
+          or a total $470.
+          Write a C program that determines how many of the salesperson earned salaries in each of the following range
+          $200 - $299, $300 - $399, $400 - $499, $500 - $599... $1000 and over
+    6.15: Use a single-subscripted array to solve the following problem.Read in 20 mumbers, each of which is between 10 and 100, inclusive. As each 
+          number is read, print it only if it is not a duplicate of a number already read. Provide from the "worst case" in which all 20 number are different
+          Use the smallest possible array to solve this problem
+    6.17: print the output of code: recursive
+    6.21: (Airline reservation system)A small airline has just purchased a computer for its new automated reservation system. The president has asked
+           you to program the new system in c. you are to write a program to assign seats on each flight of the airline's only plane.(Capacity: 10 seats)
+           Your program should display the following menu of alternatives:
+                Please type 1 for "Smoking"
+                Please type 2 for "Non smoking"
+            If the person types 1, then your program should assign seat in the smoking section(seat 1 - 5). If the person types 2, then your program should
+            assign seat in non smoking section(seat 6 to 10). Your program should then print a boarding pass indicating the person's seat number and whether
+            it is in the smoking or nonsmoking section of the plane.
+            Use a single-subscripted array to represent the seating chart of the plane. Initialize all the elements of the arry to 0 to indicate
+            that all seats are empty. As each seat is assigned set the corresponding elements of the array to 1 to indicate that the seat is no longer available
+            Your program should, of course never assign a seat that has already been assigned. When the smoking section is full. your program should ask the person
+            if it is acceptable to be placed in the print the message "Next flight leave in 3 hours."
+            
+            
+            
+    
