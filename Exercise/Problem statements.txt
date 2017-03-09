@@ -32,16 +32,12 @@ BUG: FIX IT.
 
 Chapter 6th: Arrays
 
-6.6: Bubble Sort: Regular way and Optimized way.
-6.11: Example to implement static variable initialization
-6.13: Array as a argument to the function
-6.16: Survey data analysis. Mean, mode and median.
-6.18: Linear search in an array
-6.19: Binary search. Display same output as given in the book.
-
-TODO:
-Solved examples:    
-    6.22: Example of Double scripted array.
+    6.6: Bubble Sort: Regular way and Optimized way.
+    6.11: Example to implement static variable initialization
+    6.13: Array as a argument to the function
+    6.16: Survey data analysis. Mean, mode and median.
+    6.18: Linear search in an array
+    6.19: Binary search. Display same output as given in the book.
 
 From Exercise:
     6.10: Use 1D array to solve the following problem. A company pays its sales people on a commision basis. The sales people receive $200 per week
@@ -49,10 +45,18 @@ From Exercise:
           or a total $470.
           Write a C program that determines how many of the salesperson earned salaries in each of the following range
           $200 - $299, $300 - $399, $400 - $499, $500 - $599... $1000 and over
-    6.15: Use a single-subscripted array to solve the following problem.Read in 20 mumbers, each of which is between 10 and 100, inclusive. As each 
+          
+    6.15: Use a single-subscripted array to solve the following problem.Read in 20 numbers, each of which is between 10 and 100, inclusive. As each 
           number is read, print it only if it is not a duplicate of a number already read. Provide from the "worst case" in which all 20 number are different
-          Use the smallest possible array to solve this problem
-    6.17: print the output of code: recursive
+          Use the smallest possible array to solve this problem          
+    
+    6.17: print the output of code: recursive - sum
+    
+TODO:
+Solved examples:    
+    6.22: Example of Double scripted array.
+
+From Exercise:
     6.21: (Airline reservation system)A small airline has just purchased a computer for its new automated reservation system. The president has asked
            you to program the new system in c. you are to write a program to assign seats on each flight of the airline's only plane.(Capacity: 10 seats)
            Your program should display the following menu of alternatives:
@@ -65,7 +69,3 @@ From Exercise:
             that all seats are empty. As each seat is assigned set the corresponding elements of the array to 1 to indicate that the seat is no longer available
             Your program should, of course never assign a seat that has already been assigned. When the smoking section is full. your program should ask the person
             if it is acceptable to be placed in the print the message "Next flight leave in 3 hours."
-            
-            
-            
-    
