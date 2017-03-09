@@ -33,14 +33,14 @@ BUG: FIX IT.
 Chapter 6th: Arrays
 
 6.6: Bubble Sort: Regular way and Optimized way.
+6.11: Example to implement static variable initialization
+6.13: Array as a argument to the function
+6.16: Survey data analysis. Mean, mode and median.
+6.18: Linear search in an array
+6.19: Binary search. Display same output as given in the book.
 
 TODO:
-Solved examples:
-    6.11: Example to implement static variable initialization
-    6.13: Array as a argument to the function
-    6.16: Survey data analysis. Mean, mode and median.
-    6.18: Linear search of an array
-    6.19: Binary search. Display same output as given in the book.
+Solved examples:    
     6.22: Example of Double scripted array.
 
 From Exercise:
