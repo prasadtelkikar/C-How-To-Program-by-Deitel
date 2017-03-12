@@ -38,6 +38,7 @@ Chapter 6th: Arrays
     6.16: Survey data analysis. Mean, mode and median.
     6.18: Linear search in an array
     6.19: Binary search. Display same output as given in the book.
+    6.22: Example of Double scripted array.(Curtasy: book)
 
 From Exercise:
     6.10: Use 1D array to solve the following problem. A company pays its sales people on a commision basis. The sales people receive $200 per week
@@ -52,10 +53,6 @@ From Exercise:
     
     6.17: print the output of code: recursive - sum
     
-TODO:
-Solved examples:    
-    6.22: Example of Double scripted array.
-
 From Exercise:
     6.21: (Airline reservation system)A small airline has just purchased a computer for its new automated reservation system. The president has asked
            you to program the new system in c. you are to write a program to assign seats on each flight of the airline's only plane.(Capacity: 10 seats)
@@ -69,3 +66,16 @@ From Exercise:
             that all seats are empty. As each seat is assigned set the corresponding elements of the array to 1 to indicate that the seat is no longer available
             Your program should, of course never assign a seat that has already been assigned. When the smoking section is full. your program should ask the person
             if it is acceptable to be placed in the print the message "Next flight leave in 3 hours."
+            
+    6.24 (a, b, c, d)
+    6.26 - Eight queens
+    6.28 - Duplicate Elimination
+    6.30 - The sieve of Eratosthenes
+Recursion Exercise
+    6.33 - Palindrom
+    6.34 - Linear search.
+    6.35 - Binary search.
+    6.36 - Print an array
+    6.37 - Print string backward
+    6.39 - Find minimum value in an array
+    
