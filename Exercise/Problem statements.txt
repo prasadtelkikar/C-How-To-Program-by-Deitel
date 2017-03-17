@@ -100,12 +100,50 @@ From Exercise:
                   knight has already visited that square. And, of course, test every potential move to make sure that the knight does not land off the chessboard. Run the
                   program. How many moves did the knight makes?
                 c) After attempting to write and run a knight's tour program, you have probably developed some valuable insights. We will use these to develop a heuristic
-                    (or strategy) for moving the knight. Heuristics do not guarantee success, but a carefully developed 
+                    (or strategy) for moving the knight. Heuristics do not guarantee success, but a carefully developed  heuristic greatly improves the chance of success.
+                    You may have observed that the outer squares are in some sense more troublesome, or inaccessible, squares are the four corners.
+                    Intuition may suggest that you should attempt to move the knight to the most troublesome squares first, and leave open those that are easiest to get
+                    to so that when the board gets congested near the end of the tour there will be a greater chance of success.
+                        we may develop a accessibility heuristic by classifying each of the squares according to how accessible they are, and then always moving the
+                    knight to the square (within the knight's L-shaped moves, of course) that is most inaccessible. We label a double-scripted array accessibility with 
+                    number indicating from how many squares each particular square is accessible. On a blank chessboard, the center squares are therefore rated as 8s,
+                    the corner squares are rated as 2s, and the other squares have accessibility numbers of 3, 4 or 6 following
+                            2   3   4   4   4   4   3   2
+                            3   4   6   6   6   6   4   3
+                            4   6   8   8   8   8   6   4
+                            4   6   8   8   8   8   6   4
+                            4   6   8   8   8   8   6   4
+                            4   6   8   8   8   8   6   4
+                            3   4   6   6   6   6   4   3
+                            2   3   4   4   4   4   3   2
+                    
+                    Now write a version of the knight's tour program using the accessibility heuristic. At any time, the knight should move to the square with the lowest
+                    accessibility number. In case of a tie, the king may move to any of the tie squares. Therefore, the tour may begin in any of the four corners.
+                   (Note: As the knight moves around the chessboard, your program should reduce the accessibility number as more and more squares become occupied.
+                    In this way, at any given time during the tour, each available square's accessibility number will remain equal to precisely the number of squares
+                   from which that square may be reached.) Run this version of your program. Did you get a full tour?
+                   Now Modify the program to run 64 tour, one from each square of the chessboard. How many full tour did you get?
                    
-                (c, d)   
-    6.26 - Eight queens
-    6.28 - Duplicate Elimination
-    6.30 - The sieve of Eratosthenes
+                d) Write a version of the Knight's tour program which, when encountering a tie between two or more squares, decides what square to choose by looking 
+                   by looking ahead to those squares two or more square to choose by looking ahead to those squares reachable from the "tied" squares. Your program
+                   should move to the square for which the next move would arrive at a square with the lowest accessibility number.
+                 
+    6.28 - (Duplicate Elimination) Write a program that produces 20 random numbers between 1 and 20. The program should store all non duplicate values in an array.
+        use the smallest possible array to accomplish this task.
+        
+    6.30 - (The sieve of Eratosthenes) A prime integer is any integer that can be divided evenly only by itself and 1. The sieve of Eratosthenes is a method of finding
+    prime number. It works as follows:
+        1) Create an array with all elements initialized to 1 (true). Array elements with prime subscripts will remain 1. All other array elements will eventually be
+            set to zero.
+        2) Starting with array subscript 2(subscript 1 must be prime), every time an array element is found whose value is 1, loop through the remainder of the array 
+        and set to zero every element whose subscript is a multiple of the subscript for the element with value 1. for array subscript 2, all elements beyond 2 in the
+        array that are multiple of 2 will set to zero(subscripts 4, 6, 8, 10, etc.). For array subscript 3 all elements beyond3 in the array that are multiple of 3
+        will be set to zero (subscripts 6, 9, 12, 15 etc).
+        
+        when this process is complete, the array elements that are still set to one indicate that the array subscript is a prime number. These subscripts can then be
+        printed. write a program that uses an array of 1000 elements to determine and print the prime numbers between 1 and 999. Ignore element 0 of the array.
+
+        
 Recursion Exercise
     6.33 - Palindrom
     6.34 - Linear search.
