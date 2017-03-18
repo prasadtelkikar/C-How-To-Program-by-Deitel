@@ -142,13 +142,26 @@ From Exercise:
         
         when this process is complete, the array elements that are still set to one indicate that the array subscript is a prime number. These subscripts can then be
         printed. write a program that uses an array of 1000 elements to determine and print the prime numbers between 1 and 999. Ignore element 0 of the array.
-
+        Reference: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
         
 Recursion Exercise
-    6.33 - Palindrom
-    6.34 - Linear search.
-    6.35 - Binary search.
-    6.36 - Print an array
-    6.37 - Print string backward
-    6.39 - Find minimum value in an array
+    6.33 - (Palindrom) A palindrome is a string that is spelled the same way forwards and backward. Some example of palindromes are: "radar", "mom", "dad". Write a 
+        recursive function testPalindrome that return 1 if string stored in the array is a palindrome and 0 otherwise. The function should ignore spaces and 
+        punctuation in the string.
+        
+    6.34 - (Linear search) Write a linear search program containing recursive function linearSearch to perform the linear search of the array. The function should 
+    receive an integer array and the size of the array as arguments. If the search key is found, return the array subscript otherwise return -1.
+    
+    6.35 - (Binary search) Write a binary search program containing recursive function binarySearch to perform the binary search of the array. The function  should 
+    receive an integer array and the starting subscript and ending subscript as arguments. If the search key is found, return the array subscript; otherwise, return
+    -1.
+    
+    6.36 - (Print an array) Write a recursive function printArray that takes an array and the size of the array as arguments and return nothing. The function should
+    stop processing and return when it receives an array of size zero.
+    
+    6.37 - (Print string backward) Write a recursive function strinReverse that takes a character array as an argument and return nothing. The function should stop
+        processsing and return when the terminating null character of the string is encountered.
+        
+    6.39 - (Find minimum value in an array) Write a recursive function recursiveMinimum that takes an integer array and the array size as arguments and the array
+           size as arguments and return the smallest element of the array. The function should stop processing and return when it receives an array of 1 element.
     
