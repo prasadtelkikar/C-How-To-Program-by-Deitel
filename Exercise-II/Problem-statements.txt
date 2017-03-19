@@ -1,0 +1,51 @@
+Chapter 7th : Pointers
+
+From solved Problems:
+    7.4         : The & and * pointer operators.
+    7.6 & 7.7   : Call by value and call by reference
+    7.10        : Converting a string to uppercase using a non-constant pointer to non constant data
+    7.15        : Bubble sort by call by reference
+    7.24        : Card dealing problem.
+    
+    
+From Exercises:
+    7.12 : Modify the program 7.24 so that the card dealing function deals a five card poker hand.Then write the following additional function
+            a) Determine if the hand contains a pair.
+            b) Determine if the hand contains two pairs.
+            c) Determine if the hand contains three of a kinds(e.g three jacks)
+            d) Determine if the hand contains four of a kind (e.g Four aces).
+            e) Determine if the hand contains a flush(i.e all five cards of tne same suit)
+            f) Determine if the hand contains a straight(i.e. Five cards of consecutive face values)
+            
+    7.13: Use the functions developed in above problem to write a program that deals two five card poker hands, evaluates each hand, and 
+        determines which is the better hand.
+    
+    7.14: Modify the program developed in above problem so that it can simulate the dealer. The dealer's five-card hand is dealt "face down" so the 
+        player can not see it. The program should then evaluate the dealer's hand and, based on the quality of the hand the dealer should  draw one, two
+        or three more cards to replace the corresponding number of unneeded cards in the original hand. The program should then reevalute the dealer's
+        hand. (caution: This is a difficult problem!) 
+    
+    7.15: Modify the program developed in above problem so that it can handle the dealer's hand automatically, but the player is allowed to decide which 
+        cards of the palyer's hand to replace. The program should then evalueate both hands and determine who wins. Now use this new program to play 20
+        games against the computer. Who wins more games, you or the computer? Have one of your friends play 20 games against the computer. who wins more
+        games? Based on the results of these games, make appropriate modifications to refine your poket playing program(this, too is a difficult problem)
+        Play 20 more games . Does your modified program play a better game?
+        
+    7.24: (Quick sort) In the example and exercises of chapter 6, we discussed the sorting techniques of bubble sort, bucket sort and selection sort.
+        we now present the recursive sorting technique called quick sort. The basic algorithm for a single-subscripted array of values is as follws:
+            1. Partitioning step: Take the first element of the unsorted array and determine the final location in the sorted array. This occurs when
+                all values to the left of the element in the array are less than the element, and all values to the right of the element in the array
+                are greater than the element. We now have one element in its proper location and two unsorted subarrays.
+            2. Recursive step: Perform step 1 on each unsorted subarray.
+        Each time step 1 is performed on a subarray, another element is placed in its final location of the sorted array, and two unsorted subarrays
+        are created. When a subarray consists of one element, it must be sorted, therefore that element is in its final location
+            The basic algorithm seems simple enough, but how do we determine the final position of the first element of each subarray. As an example,
+            consider the following set of values(the element in bold is the partitioning element - it will be placed in its final location in the
+            sorted array).
+        Remaining problem
+        7.25, 7.26, 7.27
+        
+        
+Chapter 8th: String
+    All string operations.
+    8.5, 8.7, 8.8, 8.9, 8.10, 8.11
