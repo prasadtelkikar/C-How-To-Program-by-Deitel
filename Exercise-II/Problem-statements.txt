@@ -42,10 +42,58 @@ From Exercises:
             The basic algorithm seems simple enough, but how do we determine the final position of the first element of each subarray. As an example,
             consider the following set of values(the element in bold is the partitioning element - it will be placed in its final location in the
             sorted array).
-        Remaining problem
-        7.25, 7.26, 7.27
-        
-        
+            37 2 6 4 89 8 10 12 68 45
+            1. Starting from the rightmost element of the array, compare each element to 37 until an element less than 37 is found, then swap 37 and
+                that element. The first element less than 37 is 12, so 37 and 12 are swapped. The new array is:
+                12  2 6 4 37 8 10 89 68 45
+                Element 12 is swapped with 37
+            2. Starting from the left of the array, but beginning with the element after 12, compare each element 37 until an element greater than 37
+                is found, then swap 37 and that element. The first element greater than 37 is 89. The new array is
+                12 2 6 4 37 8 10 89 68 45
+            3. Starting from the right, but beginning with the element before 89, compare each element to 37 until an element less than 37 is found,
+               then swap 37 and that element. The first element less than 37 is 10, so 37 and 10 are swapped. The new array is:
+                12 2 6 4 10 8 37 89 68 45
+            4. Starting from the left, but beginning with the element after 10, compare each element after 10, compare each element to 37 until an
+                element greater than 37 is found, then swap 37 is found, then swap 37 and that element. There are no more elements greater than 37,
+                so when we compare 37 to itself we know that 37 has been placed in its final location of the sorted array.
+            Once the partition has been applied on the above array, there are two unsorted subarrays. The subarray with values less than 37 contains
+            12, 2, 6, 4, 10 and 8. The subarray with values greater than 37 contains 89, 68, and 45. The sort continues with both subarray being
+            partitioned in the same manner as the original array.
+                Based on the preceding discussion, write recursive function quicksort to sort a single subscripted integer array. The function should 
+                receive as arguments an integer array, a starting subscript , and an ending subscript. Function partition should be called by quicksort
+                to perform the partitioning step.
+                    
+            7.25 : (Maze Traversal) The following grid of one s and zeros is a double-subscripted array representation of a maze.
+                        1 1 1 1 1 1 1 1 1 1 1 1
+                        1 0 0 0 1 0 0 0 0 0 0 1
+                        0 0 1 0 1 0 1 1 1 1 0 1
+                        1 1 1 0 1 0 0 0 0 1 0 1
+                        1 0 0 0 0 1 1 1 0 1 0 0
+                        1 1 1 1 0 1 0 1 0 1 0 1
+                        1 0 0 1 0 1 0 1 0 1 0 1
+                        1 1 0 1 0 1 0 1 0 1 0 1
+                        1 0 0 0 0 0 0 0 0 1 0 1
+                        1 1 1 1 1 1 0 1 1 1 0 1
+                        1 0 0 0 0 0 0 1 0 0 0 1
+                        1 1 1 1 1 1 1 1 1 1 1 1
+                The ones represent the walls of the maze and the zeros represent squares in the possible paths through the maze. THere is a simple algorithm
+                for walking through a maze that guarantees finding the exit (Assuming there is an exit). If there is not an exit, you will arrive at the
+                starting location again. Place your right hand on the wall to your right and begin waling forward. Never remove your hand from the wall.
+                If the maze turns to the right, you follow the wall to the right. As long as you do not remove your hand from the wall, eventually you will
+                arrive at the exit of the maze. There may be a shorter path than the one you have taken, but you are guaranteed to get out of the maze.
+                    Write recursive function mazeTraverse to walk through the maze. The function should receive as arguments a 12-by-12 character array
+                representing the maze, and the starting location of the maze. As mazeTraverse attempts to locate the exit from the maze, it should place the 
+                character x ineach square in the path. The function should display the maze after each move so the user can watch as the maze is solved.
+                
+            7.26 (Generating Mazes Randomly) Write a function mazeGenerator that takes as an argument a double-subscripted 12-by-12 character array and 
+                randomly produces a maze. The function should also provide the starting and ending locations of the maze. Try your function mazeTraverse
+                from abouve problem using several randomly generated mazes.
+             
+            7.27 (Maze of any size) Generalize function mazeTraverse and mazeGenerator of above 2 examples to process mazes of any width and height.
+            
+            If possible: 7.17 (Simulation: The To)
+
+            
 Chapter 8th: String
     All string operations.
     8.5, 8.7, 8.8, 8.9, 8.10, 8.11
