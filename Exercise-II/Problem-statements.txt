@@ -1,9 +1,13 @@
 Chapter 7th : Pointers
-
+Done:
 From solved Problems:
-    7.4         : The & and * pointer operators.
+	7.4         : The & and * pointer operators.
     7.6 & 7.7   : Call by value and call by reference
     7.10        : Converting a string to uppercase using a non-constant pointer to non constant data
+     
+
+TODO'S: 
+From solved Problems:
     7.15        : Bubble sort by call by reference
     7.24        : Card dealing problem.
     
