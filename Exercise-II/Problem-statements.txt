@@ -7,7 +7,7 @@ From solved Problems:
     7.15        : Bubble sort by call by reference 
     7.24        : Card dealing problem.
     
-TODO'S: 
+
 From Exercises:
     7.12 : Modify the program 7.24 so that the card dealing function deals a five card poker hand.Then write the following additional function
             a) Determine if the hand contains a pair.
@@ -15,8 +15,8 @@ From Exercises:
             c) Determine if the hand contains three of a kinds(e.g three jacks)
             d) Determine if the hand contains four of a kind (e.g Four aces).
             e) Determine if the hand contains a flush(i.e all five cards of tne same suit)
-            f) Determine if the hand contains a straight(i.e. Five cards of consecutive face values)
-            
+        TODO'S:     f) Determine if the hand contains a straight(i.e. Five cards of consecutive face values)
+TODO'S:             
     7.13: Use the functions developed in above problem to write a program that deals two five card poker hands, evaluates each hand, and 
         determines which is the better hand.
     
