@@ -16,21 +16,7 @@ From Exercises:
             d) Determine if the hand contains four of a kind (e.g Four aces).
             e) Determine if the hand contains a flush(i.e all five cards of tne same suit)
         TODO'S:     f) Determine if the hand contains a straight(i.e. Five cards of consecutive face values)
-TODO'S:             
-    7.13: Use the functions developed in above problem to write a program that deals two five card poker hands, evaluates each hand, and 
-        determines which is the better hand.
-    
-    7.14: Modify the program developed in above problem so that it can simulate the dealer. The dealer's five-card hand is dealt "face down" so the 
-        player can not see it. The program should then evaluate the dealer's hand and, based on the quality of the hand the dealer should  draw one, two
-        or three more cards to replace the corresponding number of unneeded cards in the original hand. The program should then reevalute the dealer's
-        hand. (caution: This is a difficult problem!) 
-    
-    7.15: Modify the program developed in above problem so that it can handle the dealer's hand automatically, but the player is allowed to decide which 
-        cards of the palyer's hand to replace. The program should then evalueate both hands and determine who wins. Now use this new program to play 20
-        games against the computer. Who wins more games, you or the computer? Have one of your friends play 20 games against the computer. who wins more
-        games? Based on the results of these games, make appropriate modifications to refine your poket playing program(this, too is a difficult problem)
-        Play 20 more games . Does your modified program play a better game?
-        
+		
     7.24: (Quick sort) In the example and exercises of chapter 6, we discussed the sorting techniques of bubble sort, bucket sort and selection sort.
         we now present the recursive sorting technique called quick sort. The basic algorithm for a single-subscripted array of values is as follws:
             1. Partitioning step: Take the first element of the unsorted array and determine the final location in the sorted array. This occurs when
@@ -62,8 +48,23 @@ TODO'S:
                 Based on the preceding discussion, write recursive function quicksort to sort a single subscripted integer array. The function should 
                 receive as arguments an integer array, a starting subscript , and an ending subscript. Function partition should be called by quicksort
                 to perform the partitioning step.
-                    
-            7.25 : (Maze Traversal) The following grid of one s and zeros is a double-subscripted array representation of a maze.
+            
+TODO'S:             
+    7.13: Use the functions developed in above problem to write a program that deals two five card poker hands, evaluates each hand, and 
+        determines which is the better hand.
+    
+    7.14: Modify the program developed in above problem so that it can simulate the dealer. The dealer's five-card hand is dealt "face down" so the 
+        player can not see it. The program should then evaluate the dealer's hand and, based on the quality of the hand the dealer should  draw one, two
+        or three more cards to replace the corresponding number of unneeded cards in the original hand. The program should then reevalute the dealer's
+        hand. (caution: This is a difficult problem!) 
+    
+    7.15: Modify the program developed in above problem so that it can handle the dealer's hand automatically, but the player is allowed to decide which 
+        cards of the palyer's hand to replace. The program should then evalueate both hands and determine who wins. Now use this new program to play 20
+        games against the computer. Who wins more games, you or the computer? Have one of your friends play 20 games against the computer. who wins more
+        games? Based on the results of these games, make appropriate modifications to refine your poket playing program(this, too is a difficult problem)
+        Play 20 more games . Does your modified program play a better game?
+                
+            7.25 : (Maze Traversal) The following grid of ones and zeros is a double-subscripted array representation of a maze.
                         1 1 1 1 1 1 1 1 1 1 1 1
                         1 0 0 0 1 0 0 0 0 0 0 1
                         0 0 1 0 1 0 1 1 1 1 0 1
@@ -90,7 +91,7 @@ TODO'S:
                 from abouve problem using several randomly generated mazes.
              
             7.27 (Maze of any size) Generalize function mazeTraverse and mazeGenerator of above 2 examples to process mazes of any width and height.
-            
+             
             If possible: 7.17 (Simulation: The To)
 
             
