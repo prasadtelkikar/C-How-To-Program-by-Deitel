@@ -96,5 +96,11 @@ TODO'S:
 
             
 Chapter 8th: String
+From solved examples:
     All string operations.
-    8.5, 8.7, 8.8, 8.9, 8.10, 8.11
+
+    From Exercises:
+
+    8.7: 4 string input convert it into integer and print sum of that digits
+    8.8: 4 string input convert it into float and print sum of that digits.
+    8.11: Story writing.
