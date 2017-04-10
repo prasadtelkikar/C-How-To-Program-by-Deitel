@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <string.h>
 #define SIZE 100
+
 int main(){
 
 	char sentence[SIZE];
