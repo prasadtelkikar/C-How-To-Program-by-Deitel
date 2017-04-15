@@ -6,6 +6,8 @@
 void DrawLine();
 void CountAlphabets(char* sentence, int length);
 void CountWordLength(char* sentence, int length);
+void CountOccurrencesWord(char* sentence);
+int CountOccurrencesPerticularWord(char* sentence,char* tokenPtr);
 
 int main(){
 
@@ -19,6 +21,7 @@ int main(){
 	do{
 	printf("\n1. Count alphabets");
 	printf("\n2. Count length of words");
+	printf("\n3. Count occurrences of words");
 	printf("\nEnter your choice: ");
 	scanf("%d", &ch);
 	switch(ch){
@@ -27,6 +30,9 @@ int main(){
 		break;
 		case 2:
 		CountWordLength(sentence, length);
+		break;
+		case 3:
+		CountOccurrencesWord(sentence);
 		break;
 	}
 	printf("\nDo you want to continue (0 for exit): ");
@@ -60,7 +66,7 @@ void CountWordLength(char* sentence, int length){
 	int arr[50] = {0};
 	int maxLength = 0;
 	char *tokenPtr = strtok(sentence," ");
-
+ 
 	while(tokenPtr!= NULL){
 		int length = strlen(tokenPtr);
 		if(length > maxLength)
@@ -76,4 +82,28 @@ void CountWordLength(char* sentence, int length){
 	for (int i = 1; i <= maxLength; ++i)
 		printf("\n%6d %3s %3d",i, "-", arr[i]);
 
+}
+
+void CountOccurrencesWord(char* sentence){
+	char* tokenPtr = strtok(sentence, " ");
+	DrawLine();
+	printf("\n%2s | %2s\n", "words", "Count");
+	DrawLine();
+	while(tokenPtr != NULL){
+		int count =	CountOccurrencesPerticularWord(sentence, tokenPtr);
+		printf("\n%2s%6d", tokenPtr, count);
+		tokenPtr = strtok(NULL, " ");
+	}
+}
+
+int CountOccurrencesPerticularWord(char* sentence,char* tokenPtr){
+	int count = 1;
+	char* strPtr = strstr(sentence, tokenPtr);
+
+	while (strPtr != NULL)
+	{
+		count++;
+		strPtr = strstr(sentence+1, tokenPtr);
+	}
+	return count;
 }

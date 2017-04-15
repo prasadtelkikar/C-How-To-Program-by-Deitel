@@ -104,3 +104,7 @@ From solved examples:
     8.7: 4 string input convert it into integer and print sum of that digits
     8.8: 4 string input convert it into float and print sum of that digits.
     8.11: Story writing.
+    
+    
+TODO: 
+    half portion of 8.39, 8.40, 8.41
