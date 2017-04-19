@@ -15,7 +15,10 @@ Node* Insert(Node* head, int data);
 Node* InsertAtNth(Node* head, int data, int location);
 Node* DeleteAtNth(Node* head, int location);
 Node* Reverse(Node *head);
+Node* ReverseRecursively(Node* currentNode);
 void DisplayList(Node* head);
+void DisplayListRecursively(Node* head);
+void DisplayReverseListRecursively(Node* head);
 int Instructions();
 
 int main(){
@@ -50,9 +53,12 @@ int main(){
 			break;
 			case 4:
 				printf("\nReversed linked list");
-				head = Reverse(head);
+				//head = Reverse(head);
+				head = ReverseRecursively(head);
 			break;
 			case 5:
+				//DisplayListRecursively(head);
+				//DisplayReverseListRecursively(head);
 				DisplayList(head);
 			break;
 		}
@@ -67,6 +73,7 @@ int Instructions(){
 	printf("\n3. Delete element at nth position");
 	printf("\n4. Reverse linked list");
 	printf("\n5. Print");
+	printf("\n6. Exit");
 	printf("\nEnter your choice: ");
 	scanf("%d", &choice);
 	return choice;
@@ -141,6 +148,20 @@ Node* Reverse(Node *head){
 	return head;
 }
 
+//Reverse list using recursion
+Node* ReverseRecursively(Node* currentNode){
+
+	if(currentNode == NULL)
+		return NULL;
+	if(currentNode -> next == NULL)
+		return currentNode;
+
+	Node* temp = ReverseRecursively(currentNode -> next);
+	Node* p = currentNode -> next;
+	p -> next = currentNode;
+	currentNode -> next = NULL;
+	return temp;
+}
 //Print all elements from list.
 void DisplayList(Node* head){
 	printf("%s\n", "List is: ");
@@ -153,3 +174,21 @@ void DisplayList(Node* head){
 	}
 	printf("\n");
 }
+
+//print all elements recursively
+void DisplayListRecursively(Node* head){
+	if(head == NULL)
+		return;
+	printf("%d ", head -> data);
+	DisplayListRecursively(head -> next);
+}
+
+//print all elements in reverse order
+void DisplayReverseListRecursively(Node* head){
+	if(head == NULL)
+		return;
+
+	DisplayReverseListRecursively(head -> next);
+	printf("%d ", head ->data);
+}
+
