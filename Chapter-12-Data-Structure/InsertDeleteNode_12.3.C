@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <String.h>
 #include <stdlib.h>
-//TODO: complete program
+//TODO: half done; delete functionality is remaining
 struct Node{
 	char data;
 	struct Node *nextNode;
@@ -14,22 +14,25 @@ Node* DeleteNode(Node* head, char c);
 void DisplayList(Node* head);
 
 int main(){
-	Node* head;
-	int choice = 0;
+	Node* head = NULL;
+	int choice = 0, n;
 	char c;
 	char* cq;
 	while(choice != 4){
 		choice = Instructions();
 		switch(choice){
 			case 1:
+			getchar();
+			printf("\nEnter number of characters to be insert: ");
+			scanf("%d", &n);
+			getchar();
+			for (int i = 0; i < n; ++i)
+			{
 				printf("\nEnter a character: ");
+				scanf("%c", &c);
 				getchar();
-				 gets(cq);
-				
-				//scanf("%c", &c);
-
-				printf("--%c\n", c);
-				//head = InsertNode(head, c);
+				head = InsertNode(head, c);
+			}
 			break;
 			case 2:
 			break;
@@ -52,31 +55,36 @@ int Instructions(){
 }
 
 Node* InsertNode(Node* head, char c){
-	/*Node* temp = (Node*)malloc(sizeof(Node));
+	Node* temp = (Node*)malloc(sizeof(Node));
 	temp -> data = c;
 	temp -> nextNode = NULL;
 	Node* currentNode = head;
 	Node* previousNode = NULL;
-	if(head == NULL){
+
+	if(head == NULL){	
 		head = temp;
 		return head;
 	}
 	else{
-		while(currentNode != NULL && temp -> data > currentNode-> data){
-				previousNode = currentNode;
-				currentNode = currentNode -> nextNode;
+		while(currentNode != NULL && c > currentNode -> data){
+			previousNode = currentNode;
+			currentNode = currentNode -> nextNode;
 		}
 		previousNode -> nextNode = temp;
 		temp -> nextNode = currentNode;
 		return head;
-	}*/
-	printf("%c\n", c);
+	}
 }
+
 
 void DisplayList(Node* head){
 	Node* currentNode = head;
 	while(currentNode != NULL){
-		printf("%c", currentNode -> data);
+		if(currentNode -> nextNode == NULL)
+			printf("%c -> NULL",currentNode ->data);
+		else
+			printf("%c -> ", currentNode -> data);
 		currentNode = currentNode -> nextNode;
 	}
+	printf("\n");
 }
