@@ -35,6 +35,11 @@ int main(){
 			}
 			break;
 			case 2:
+			getchar();
+			printf("\nEnter a character to delete");
+			scanf("%c", &c);
+			getchar();
+			head = DeleteNode(head, c);
 			break;
 			case 3:
 				DisplayList(head);
@@ -45,7 +50,7 @@ int main(){
 
 int Instructions(){
 	int choice;
-	printf("1. Insert a character into a list");
+	printf("\n\n1. Insert a character into a list");
 	printf("\n2. Delete a character from a list");
 	printf("\n3. Display List");
 	printf("\n4. Exit");
@@ -66,7 +71,7 @@ Node* InsertNode(Node* head, char c){
 		return head;
 	}
 	else{
-		while(currentNode != NULL && c > currentNode -> data){
+		while(currentNode != NULL && c >= currentNode -> data){
 			previousNode = currentNode;
 			currentNode = currentNode -> nextNode;
 		}
@@ -76,15 +81,44 @@ Node* InsertNode(Node* head, char c){
 	}
 }
 
+Node* DeleteNode(Node* head, char c){
+	Node* currentNode = head;
+	Node* previousNode = NULL;
+	Node* next = NULL;
+
+	if(currentNode == NULL){
+		printf("\nList is empty");
+		return NULL;
+	}
+	else if(c == currentNode -> data){
+		head = currentNode -> nextNode;
+		return head;
+	}
+	else{
+		while(currentNode != NULL && c > currentNode -> data){
+			previousNode = currentNode;
+			currentNode  = currentNode -> nextNode;
+		}
+
+		previousNode -> nextNode = currentNode -> nextNode;
+		free(currentNode);
+		return head;
+	}
+}
 
 void DisplayList(Node* head){
 	Node* currentNode = head;
-	while(currentNode != NULL){
-		if(currentNode -> nextNode == NULL)
-			printf("%c -> NULL",currentNode ->data);
-		else
-			printf("%c -> ", currentNode -> data);
-		currentNode = currentNode -> nextNode;
+	if(currentNode == NULL)
+		printf("\nEmpty list");
+	else{
+		while(currentNode != NULL){
+			if(currentNode -> nextNode == NULL)
+				printf("%c -> NULL",currentNode ->data);
+			else
+				printf("%c -> ", currentNode -> data);
+			currentNode = currentNode -> nextNode;
+		}	
 	}
+	
 	printf("\n");
 }
