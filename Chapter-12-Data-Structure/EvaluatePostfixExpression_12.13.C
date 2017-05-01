@@ -13,13 +13,18 @@ int Calculate(int op1, int op2, char oper);
 Node* Push(Node* top, int value);
 Node* Pop(Node* top);
 bool IsOperator(char ch);
+void Display(Node* top);
+char* Tokenization(char* expression);
 
 int main(){
+	int index;
 	char expression[50];
 	printf("\nEnter postfix expression: ");
-	scanf("%s", expression);
+	gets(expression);
 	int result = EvaluatePostfixExpression(expression);
+	printf("\n");
 	printf("Equation result: %d", result);
+	printf("\n");
 	return 0;		
 }
 
@@ -27,13 +32,14 @@ int main(){
 int EvaluatePostfixExpression(char *expression){
 	int i = 0;
 	Node* top = NULL;
-	int length = strlen(expression);
+//	char* expTokenPtr[] = Tokenization(expression);
 	while(expression[i] != '\0'){
 		char ch = expression[i];
 		if(IsOperator(ch)){
 			int x = top -> data;
 			top = Pop(top);
 			int y = top -> data;
+			top = Pop(top);
 			int result = Calculate(x, y, ch);
 			top = Push(top, result);
 		}
@@ -58,11 +64,13 @@ Node* Push(Node* top, int value){
 	}
 	return top;
 }
+
 /* Pop top node and replace head index to current top*/
 Node* Pop(Node* top){
 	top = top -> nextNode;
 	return top;
 }
+
 /* Check whether character ch is an operator*/
 bool IsOperator(char ch){
 	if(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%')
@@ -79,10 +87,7 @@ int Calculate(int op1, int op2, char ch){
 			result = op1 + op2;
 		break;
 		case '-':
-		if(op1 > op2)
 			result = op1 - op2;
-		else
-			result = op2 - op1;
 		break;
 		case '*':
 			result = op1 * op2;
@@ -101,4 +106,15 @@ int Calculate(int op1, int op2, char ch){
 		break;
 	}
 	return result;
+}
+
+void Display(Node* top){
+	if(top == NULL)
+		printf("\nStack is empty");
+	else{
+		while(top != NULL){
+			printf("%d\n", top -> data);
+			top = top -> nextNode;
+		}
+	}
 }
