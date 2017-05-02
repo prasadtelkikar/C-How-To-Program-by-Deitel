@@ -2,7 +2,8 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <string.h>
-
+/*Note: Add space in between 2 digits or operators. 
+Space is considered as a seperator in an equation*/
 struct Node{
 	int data;
 	struct Node* nextNode;
@@ -14,7 +15,7 @@ Node* Push(Node* top, int value);
 Node* Pop(Node* top);
 bool IsOperator(char ch);
 void Display(Node* top);
-char* Tokenization(char* expression);
+void Tokenization(char* expression, char** tokenPtr);
 
 int main(){
 	int index;
@@ -32,25 +33,28 @@ int main(){
 int EvaluatePostfixExpression(char *expression){
 	int i = 0;
 	Node* top = NULL;
-//	char* expTokenPtr[] = Tokenization(expression);
-	while(expression[i] != '\0'){
-		char ch = expression[i];
-		if(IsOperator(ch)){
+	char* expTokens[10]={NULL};
+	Tokenization(expression, expTokens);
+	while(expTokens[i] != NULL){
+		if(IsOperator(*expTokens[i])){
 			int x = top -> data;
 			top = Pop(top);
 			int y = top -> data;
 			top = Pop(top);
-			int result = Calculate(x, y, ch);
+			//printf("%d %c %d\n", x, *expTokens[i], y);
+			int result = Calculate(x, y, *expTokens[i]);
 			top = Push(top, result);
 		}
 		else{
-			int value = ch - '0';
+			int value = atoi(expTokens[i]);
+			//printf("Pushed values = %d\n", value);
 			top = Push(top, value);
 		}
 		i++;
 	}
 	return top -> data;
 }
+
 /*Push node at the top of the list. Principle: FILO*/
 Node* Push(Node* top, int value){
 	Node* temp = (Node*) malloc(sizeof(Node));
@@ -108,6 +112,7 @@ int Calculate(int op1, int op2, char ch){
 	return result;
 }
 
+/* Print Stack*/
 void Display(Node* top){
 	if(top == NULL)
 		printf("\nStack is empty");
@@ -116,5 +121,17 @@ void Display(Node* top){
 			printf("%d\n", top -> data);
 			top = top -> nextNode;
 		}
+	}
+}
+
+/* Create token of string using space */
+void Tokenization(char* expression, char** tokenPtr){
+
+	int index = 0; 
+	char* token = strtok(expression, " ");
+	while(token != NULL){
+		tokenPtr[index] = token;
+		token = strtok(NULL, " ");
+		index++;
 	}
 }
