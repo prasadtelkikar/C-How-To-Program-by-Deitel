@@ -37,9 +37,9 @@ int EvaluatePostfixExpression(char *expression){
 	Tokenization(expression, expTokens);
 	while(expTokens[i] != NULL){
 		if(IsOperator(*expTokens[i])){
-			int x = top -> data;
-			top = Pop(top);
 			int y = top -> data;
+			top = Pop(top);
+			int x = top -> data;
 			top = Pop(top);
 			//printf("%d %c %d\n", x, *expTokens[i], y);
 			int result = Calculate(x, y, *expTokens[i]);
@@ -52,7 +52,9 @@ int EvaluatePostfixExpression(char *expression){
 		}
 		i++;
 	}
-	return top -> data;
+	int result = top->data;
+        Pop(top);
+	return result;
 }
 
 /*Push node at the top of the list. Principle: FILO*/
@@ -71,8 +73,10 @@ Node* Push(Node* top, int value){
 
 /* Pop top node and replace head index to current top*/
 Node* Pop(Node* top){
-	top = top -> nextNode;
-	return top;
+    Node* temp=top;
+    top = temp->nextNode;
+    free(temp);
+    return top;
 }
 
 /* Check whether character ch is an operator*/
