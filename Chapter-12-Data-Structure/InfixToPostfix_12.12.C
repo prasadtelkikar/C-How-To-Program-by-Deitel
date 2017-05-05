@@ -13,43 +13,62 @@ Node* CreateList(Node* top, char ch);
 void Display(Node* top);
 Node* Push(Node* top, char ch);
 Node* Pop(Node* top);
-void InfixToPostfix(Node* top, char* expression);
+void InfixToPostfix(Node* top, char* expression, char result[SIZE]);
 bool HasHigherPrecedence(char stackOperator, char currentOperator);
 bool IsOperator(char ch);
 
 int main(){
 	char expression[SIZE];
-	char* result;
+	char result[SIZE];
 	Node* top = NULL;
 	printf("\nEnter expression: ");
 	gets(expression);
-	InfixToPostfix(top, expression);
-	
+	InfixToPostfix(top, expression, result);
+	printf("\nPostfix expression: %s", result);
 	return 0;
 }
 
-void InfixToPostfix(Node* top, char* expression){
+/*Infix to Postfix conversion
+Parameters: Node* top = Stack top; char* expression = Input expression; char result[] : Output expression
+*/
+void InfixToPostfix(Node* top, char* expression, char result[]){
 	int i = 0;
-	char result[SIZE] = "";
+	int postfixIndex = 0;
 
 	while(expression[i] != '\0'){
-		if(!IsOperator(expression[i]))
-			strcat(result, &expression[i]);
-		else if(IsOperator(expression[i])){
-			while(top != NULL && HasHigherPrecedence(top -> data, expression[i])){
-				strcat(result, &(top -> data));
+		if(IsOperator(expression[i])){
+			while(top != NULL && HasHigherPrecedence(top -> data , expression[i]) && top -> data != '('){
+				char ch = top -> data;
+				result[postfixIndex] = ch;
 				top = Pop(top);
+				postfixIndex++;
 			}
 			top = Push(top, expression[i]);
+			
+			//To remove '(' and ')' from stack.
+			if(top -> data == ')'){
+				top = Pop(Pop(top));
+			}
 		}
+		else if(expression[i] == '(')
+			top = Push(top, expression[i]);
+		else{
+			char ch = expression[i];
+			result[postfixIndex] = ch;
+			postfixIndex++;	
+		}
+		i++;
 	}
+
 	while(top != NULL){
-		strcat(result, &(top -> data));
-		top = top -> nextNode;
+		char ch = top -> data;
+		result[postfixIndex] = ch;
+		top = Pop(top);
+		postfixIndex++;
 	}
-	printf("\nPostfix expression: %s", result);
 }
 
+/* Push character into stack */
 Node* Push(Node* top, char ch){
 	Node* temp = (Node*) malloc(sizeof(Node));
 	temp -> data = ch;
@@ -60,14 +79,15 @@ Node* Push(Node* top, char ch){
 	return top;
 }
 
+/* Pop top letter from stack */
 Node* Pop(Node* top){
-	printf("\nPoped Element: %c", top -> data);
 	Node* temp = top;
 	top = top -> nextNode;
 	free(temp);	
 	return top;
 }
 
+/* Check higher precedence operator */
 bool HasHigherPrecedence(char stackOperator, char currentOperator){
 	if((stackOperator == '*' || stackOperator == '/' || stackOperator == '%') && (currentOperator == '+' || currentOperator == '-'))
 		 return true;
@@ -77,8 +97,9 @@ bool HasHigherPrecedence(char stackOperator, char currentOperator){
 	return true;
 }
 
+/* Check for operator */
 bool IsOperator(char ch){
-	if(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%')
+	if(ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '(' || ch == ')')
 		return true;
 
 	return false;
