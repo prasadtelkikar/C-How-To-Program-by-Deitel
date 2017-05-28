@@ -18,6 +18,8 @@ void PostorderTraversal(Node* rootNode);
 Node* SearchNode(Node* rootNode, int value);
 Node* DeleteNode(Node* rootNode, int value);
 void DisplayAllTraversal(Node* rootNode);
+Node* FindMin(Node* childNode);
+int FindHeight(Node* rootNode);
 
 int main(){
 	int size;
@@ -43,6 +45,9 @@ int main(){
 
 	DisplayAllTraversal(rootNode);
 	
+	int treeHeight = FindHeight(rootNode);
+	printf("\n\nHeight of tree: %d", treeHeight);
+	
 	printf("\nEnter Number to search: ");
 	scanf("%d", &searchNumber);
 
@@ -55,7 +60,9 @@ int main(){
 	printf("\n%s", "Enter number to be deleted: ");
 	scanf("%d", &deleteNumber);
 
-	//Node* rootNode = DeleteNode(rootNode, deleteNumber);
+	rootNode = DeleteNode(rootNode, deleteNumber);
+
+	DisplayAllTraversal(rootNode);
 }
 
 /* Create new node */
@@ -135,5 +142,52 @@ void DisplayAllTraversal(Node* rootNode){
 }
 
 Node* DeleteNode(Node* rootNode, int value){
-	//TODO: complete delete function
+	if(rootNode == NULL)
+	return NULL;	
+
+	else if(value < rootNode -> data)
+		rootNode -> leftPtr = DeleteNode(rootNode -> leftPtr, value);
+	
+	else if(value > rootNode -> data)
+		rootNode -> rightPtr = DeleteNode(rootNode -> rightPtr, value);
+
+	else{
+		if(rootNode -> count > 1){
+			(rootNode -> count) --;
+			return rootNode;
+		}
+		if(rootNode -> leftPtr == NULL){
+			Node* temp = rootNode -> rightPtr;
+			free(rootNode);
+			return temp;
+		}
+		else if(rootNode -> rightPtr == NULL){
+			Node* temp = rootNode -> leftPtr;
+			free(rootNode);
+			return temp;
+		}
+		Node* temp = FindMin(rootNode -> rightPtr);
+
+		rootNode -> data = temp -> data;
+		rootNode -> rightPtr = DeleteNode(rootNode -> rightPtr, temp -> data);
+	}
+	return rootNode;
+}
+
+Node* FindMin(Node* childNode){
+	
+	if(childNode -> leftPtr != NULL)
+		return FindMin(childNode -> leftPtr);
+
+	return childNode;
+}
+
+int FindHeight(Node* rootNode){
+	if(rootNode == NULL)
+		return -1;
+	else{
+		int heightLeft = FindHeight(rootNode -> leftPtr);
+		int heightRight = FindHeight(rootNode -> rightPtr);
+		return (heightRight > heightLeft) ? heightRight + 1 : heightLeft + 1;
+	}
 }
