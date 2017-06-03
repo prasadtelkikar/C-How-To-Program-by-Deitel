@@ -1,30 +1,23 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <queue>
 
 struct Node{
 	int data;
 	struct Node* rightNode;
 	struct Node* leftNode;
 };
-
-struct Queue{
-	int data;
-	struct Queue* link;
-};
-
-void Push(int value);
-Node* Pop(Node* queueHead);
 Node* CreateBST(Node* currentNode, int value);
 Node* CreateNewNode(int value);
 void InOrderTraversal(Node* rootNode);
+void LevelOrderTraversal(Node* rootNode, int size);
 
 int main(){
 	int size;
 	Node* head = NULL;
 	printf("%s\n", "\nEnter number of elements in bst: ");	
 	scanf("%d", &size);
-
 	for (int i = 0; i < size; ++i)
 	{
 		int value;
@@ -33,9 +26,23 @@ int main(){
 
 		head = CreateBST(head, value);
 	}
-	InOrderTraversal(head);
+
+	printf("\n");
+	Node* currentNode = head;
+	printf("%s\n", "InOrderTraversal :");
+	InOrderTraversal(currentNode);
+	
+	printf("\n");
+	for (int i = 0; i < 20; ++i)
+		printf("-");
+	printf("\n");
+	
+	currentNode = head;
+	printf("%s\n", "Level order traversal :");
+	LevelOrderTraversal(currentNode, size);
 }
 
+//Create binary search tree
 Node* CreateBST(Node* currentNode, int value){
 
 	if(currentNode == NULL)
@@ -48,6 +55,7 @@ Node* CreateBST(Node* currentNode, int value){
 	return currentNode;
 }
 
+//Create new node
 Node* CreateNewNode(int value){
 	Node* newNode = (Node*) malloc(sizeof(Node));
 	newNode -> data = value;
@@ -57,6 +65,8 @@ Node* CreateNewNode(int value){
 	return newNode;
 }
 
+
+//Inorder traversal
 void InOrderTraversal(Node* currentNode){
 	if(currentNode != NULL){
 		InOrderTraversal(currentNode -> leftNode);
@@ -64,3 +74,26 @@ void InOrderTraversal(Node* currentNode){
 		InOrderTraversal(currentNode -> rightNode);
 	}
 } 
+
+//Almost completed; still fix the bug
+void LevelOrderTraversal(Node* rootNode, int size){
+	Node* queue[size] = {NULL};
+	int index = 0;
+	int insertIndex = 0;
+	if(rootNode == NULL)
+		printf("Empty tree");
+	else{
+		queue[0] = rootNode;
+		while(queue[index] != NULL && index < size){
+			Node* current = queue[index];
+			printf("%d\t", current -> data);
+
+			if(current -> leftNode != NULL)
+				queue[++insertIndex] = current -> leftNode;
+			if(current -> rightNode != NULL)
+				queue[++insertIndex] = current -> rightNode;
+
+			index++;
+		}
+	}
+}
