@@ -1,0 +1,87 @@
+1. Diagnostics <assert.h>
+    void assert(int expression)
+        - Macro assert puts diagonstics into programs. When it is executed. If expression is false.
+        The assert macro writes information about the particular call that failed including the text
+        of the argument, the name of the source file and the source line number - the latter are 
+        respectively the values of the preprocessing macros __FILE__ and __LINE__ on the standard
+        error file in an implementation defined format
+        Macro assert then calls function abort. If the preprocessor directive 
+            #define NDEBUG
+        appear in the source file where assert.h is included, any assertions in the file are ignored.
+        
+2. Character Handling <ctype.h>
+    - The function in this section return nonzero (true) if and only if the value of the argument
+    c conform to that in the description of the function
+
+    1. int isalnum(int c):
+        Test for any character for which isalpha or isdigit is true
+    
+    2. int isalpha(int c):
+        Test for any character for which isupper or islower is true
+    
+    3. int iscntrl(int c):
+        Tests for any control characters
+    
+    4. int isdigit(int c):
+        Tests for any decimal-digit character
+        
+    5. int isgraph(int c):
+        Tests for any printing character except space(' ')
+    
+    6. int islower(int c):
+        Tests for any character that is a lowercase letter
+    
+    7. int isprint(int c):
+        Tests for any printing character including space(' ')
+
+    8. int ispunch(int c):
+        Test for any printing character that is neither space(' ') nor
+        a character for which isalnum is true
+    
+    9. int isspace(int c):
+        Test for any character that is a standard white-space character.
+        e.g. (' '), ('\t'), ('\f'), ('\n'), ('\r'), ('\t'), ('\v')
+        
+    10. int isupper(int c):
+        Tests for any character that is an upppercase letter
+    
+    11. int isxdigit(int c):
+        Tests for any hexadecimal - digit character.
+        
+    12. int tolower(int c):
+        Convert an uppercase character to the corresponding lowercase character
+    
+    13. int toupper(int c):
+        Convert an lowercase character to the corresponding uppercase character.
+            
+3. Mathematics <math.h>
+    1. HUGE_VAL :
+        A symbolic constant representing a positive double expression
+    
+    2. double asin(double x):
+        Computes the principle value of the arc sine of x
+        
+    3. double atan(double x):
+        Computes the principle value of arc tangent of x.
+    
+    4. double atan2(double y, double x):
+        The atan2 function computes the principle value of the arc tangent y / x,
+        using the sign of both arguments to determine the quandrant of the reutrn value
+    
+    5. double cos(double x):
+        Compute the cosine of x (measured in radians)
+        
+    6. double sin(double x):
+        Compute the sine of x (measured in radians)
+    
+    7. double tan(double x):
+        Compute the tangent of x (measured in radians)
+       
+    8. double log(double x):
+        Compute the natuaral logarithm of x. A domain error occurs if the argument is
+        negative. A range error may occurs if the argument is zero.
+    
+    9. double log10(double x):
+        Compute the base-ten logarithm of x. A domain error occurs if the argument is
+        negative. A range error may occurs if the argument is zero.
+    
